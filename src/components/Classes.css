@@ -1,0 +1,186 @@
+.classes {
+  background: var(--light-bg);
+  padding: 80px 20px;
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.class-card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.class-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.class-card:hover::after {
+  transform: scaleX(1);
+}
+
+.class-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.2);
+}
+
+.class-image {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  transition: all var(--transition);
+}
+
+.class-card:hover .class-image {
+  transform: scale(1.1);
+}
+
+.class-card h3 {
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.class-time {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.class-details {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid var(--light-bg);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.class-details p {
+  text-align: left;
+  color: var(--light-text);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.class-details strong {
+  color: var(--secondary-color);
+}
+
+.class-details .btn {
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .classes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .class-image {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .classes {
+    padding: 60px 20px;
+  }
+
+  .classes-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .class-card {
+    padding: 25px 20px;
+  }
+
+  .class-image {
+    font-size: 3rem;
+  }
+
+  .class-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .class-time {
+    font-size: 0.9rem;
+  }
+
+  .class-details p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .classes {
+    padding: 40px 15px;
+  }
+
+  .classes-grid {
+    gap: 10px;
+  }
+
+  .class-card {
+    padding: 20px 15px;
+  }
+
+  .class-image {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .class-card h3 {
+    font-size: 1rem;
+  }
+
+  .class-time {
+    font-size: 0.8rem;
+  }
+
+  .class-details {
+    padding-top: 15px;
+  }
+
+  .class-details p {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+  }
+
+  .class-details .btn {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+}

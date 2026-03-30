@@ -1,0 +1,150 @@
+.testimonials {
+  background: var(--light-bg);
+  padding: 80px 20px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.2);
+  border-left: 4px solid var(--primary-color);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.member-image {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.member-info h4 {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+
+.member-info p {
+  color: var(--light-text);
+  font-size: 0.85rem;
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.star {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.testimonial-text {
+  color: var(--light-text);
+  line-height: 1.8;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .testimonial-card {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 60px 20px;
+  }
+
+  .testimonials-grid {
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 25px 20px;
+  }
+
+  .testimonial-header {
+    gap: 12px;
+  }
+
+  .member-image {
+    font-size: 2.5rem;
+  }
+
+  .member-info h4 {
+    font-size: 1rem;
+  }
+
+  .member-info p {
+    font-size: 0.8rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 40px 15px;
+  }
+
+  .testimonials-grid {
+    gap: 15px;
+  }
+
+  .testimonial-card {
+    padding: 20px 15px;
+  }
+
+  .testimonial-header {
+    gap: 10px;
+  }
+
+  .member-image {
+    font-size: 2rem;
+  }
+
+  .member-info h4 {
+    font-size: 0.95rem;
+  }
+
+  .member-info p {
+    font-size: 0.75rem;
+  }
+
+  .star {
+    font-size: 0.8rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.8rem;
+  }
+}
